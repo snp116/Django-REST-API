@@ -1,6 +1,9 @@
 from django.urls import path 
 from . import views 
+
+from rest_framework.authtoken.views import obtain_auth_token
   
 urlpatterns = [ 
-    # path('ratings', views.RatingsView.as_view()), 
+    path('menu-items/', views.MenuItemsView.as_view(), name='menu-items'),
+    path('menu-items/<int:pk>', views.SingleMenuItemView.as_view()),
 ] 
